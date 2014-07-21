@@ -2,7 +2,7 @@
   "name": "phant-throttler-redis",
   "version": "1.0.1",
   "main": "lib/phant-throttler-redis.js",
-  "description": "redis based rate limiting module for phant",
+  "description": "Redis based rate limiting module for phant",
   "homepage": "https://github.com/sparkfun/phant-throttler-redis",
   "bugs": "https://github.com/sparkfun/phant-throttler-redis/issues",
   "author": {
@@ -28,5 +28,36 @@
   },
   "scripts": {
     "test": "grunt"
+  },
+  "phantConfig": {
+    "name": "Redis",
+    "options": [{
+      "label": "Host",
+      "name": "host",
+      "default": "localhost",
+      "type": "text",
+      "description": "IP address or hostname"
+    },
+    {
+      "label": "Port",
+      "name": "port",
+      "default": "6379",
+      "type": "number",
+      "description": ""
+    },
+    {
+      "label": "Limit",
+      "name": "limit",
+      "default": "100",
+      "type": "number",
+      "description": "Number of requests allowed in window"
+    },
+    {
+      "label": "Window",
+      "name": "window",
+      "default": "900",
+      "type": "number",
+      "description": "Window (in seconds)"
+    }]
   }
 }
